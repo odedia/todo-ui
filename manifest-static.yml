@@ -1,0 +1,8 @@
+---
+applications:
+  - name: todo-ui
+    memory: 256M
+    path: dist
+    random-route: true
+    buildpacks:
+    - nginx_buildpack
