@@ -3,5 +3,5 @@ applications:
   - name: todo-ui
     memory: 256M
     random-route: true
-    docker:
-      image: odedia/todos-ui
+    env:
+      NODE_ENV: production
