@@ -1,6 +1,6 @@
 ---
 applications:
-  #run npm install && npm run build before cf push
+  #build.sh before cf push
   - name: todo-ui
     path: ./dist
     memory: 256M
