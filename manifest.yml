@@ -1,7 +1,7 @@
 ---
 applications:
+  #run npm install && npm run build before cf push
   - name: todo-ui
+    path: ./dist
     memory: 256M
     random-route: true
-    env:
-      NODE_ENV: production
