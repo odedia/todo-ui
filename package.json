@@ -15,7 +15,9 @@
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "vue": "^2.5.21",
-    "vuejs-logger": "1.5.3"
+    "vue-resource": "^1.5.1",
+    "vuejs-logger": "1.5.3",
+    "zipkin-instrumentation-vue-resource": "^0.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",

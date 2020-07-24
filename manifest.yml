@@ -5,3 +5,5 @@ applications:
     path: ./dist
     memory: 256M
     random-route: true
+    env:
+      ZIPKIN_ADDRESS: <replace-me>

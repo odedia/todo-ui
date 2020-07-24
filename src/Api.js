@@ -4,7 +4,7 @@ import axios from 'axios'
 //const SERVER_URL = 'http://localhost:9000';  
   
 const instance = axios.create({  
-  baseURL: 'https://' + window.location.hostname + '/api',
+  baseURL: 'http://' + window.location.hostname + '/api',
   timeout: 1000  
 });  
   
