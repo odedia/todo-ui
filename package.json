@@ -7,17 +7,20 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && cp nginx.conf ./dist && cp mime.types ./dist",
     "start": "node server.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "copyfiles": "^2.3.0",
     "express": "^4.17.1",
     "vue": "^2.5.21",
     "vue-resource": "^1.5.1",
     "vuejs-logger": "1.5.3",
-    "zipkin-instrumentation-vue-resource": "^0.2.0"
+    "zipkin": "^0.11.2",
+    "zipkin-instrumentation-vue-resource": "^0.2.0",
+    "zipkin-transport-http": "^0.11.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",

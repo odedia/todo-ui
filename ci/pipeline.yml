@@ -4,17 +4,14 @@ resources:
   source:
     username: ((docker-hub-username))
     password: ((docker-hub-password))
-    repository: ((docker-hub-username))/todos-ui
+    repository: harbor.apps.cf.tanzutime.com/demo/todo-ui:latest
     email: ((docker-hub-email))
 
 - name: source-code
   type: git
   source:
-    uri: https://github.com/odedia/todos-pcf.git
+    uri: https://github.com/odedia/todo-ui.git
     branch: master
-    paths:
-    - todo-ui/**/*
-    - todo-ui/**
 
 - name: cf-push-resource
   type: cf
@@ -27,26 +24,14 @@ resources:
     skip_cert_check: false
 
 jobs:
-- name: publish
-  public: true
-  serial: true
-  plan:
-  - get: source-code
-    trigger: true
-  - put: todos-ui-docker-image
-    params:
-      build: source-code/todo-ui
-
 - name: push-to-pcf
   public: true
   serial: true
   plan:
   - get: source-code
   - get: todos-ui-docker-image
-    passed:
-    - publish
     trigger: true
   - put: cf-push-resource
     params:
-      manifest: source-code/todo-ui/manifest-docker.yml
+      manifest: source-code/todo-ui/manifest.yml
 

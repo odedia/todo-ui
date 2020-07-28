@@ -4,7 +4,7 @@ import axios from 'axios'
 //const SERVER_URL = 'http://localhost:9000';  
   
 const instance = axios.create({  
-  baseURL: window.location.protocol + '//' + window.location.hostname + '/api',
+  baseURL: window.location.protocol + '//' + window.location.hostname + ':8080/api',
   timeout: 1000  
 });  
   
