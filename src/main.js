@@ -34,7 +34,7 @@ const tracer = new Tracer({
     logger: new HttpLogger({
       // take a look
       // endpoint: window.location.protocol + '//' + window.location.host + '/zipkin',
-      endpoint: 'http://a037ceb5b007040c9ac39f4186e15796-1927907915.eu-west-1.elb.amazonaws.com:2878/api/v2/spans',
+      endpoint: 'http://aacea43e4dbdd448390f9334070f58b3-661522435.eu-west-1.elb.amazonaws.com:9411/api/v2/spans',
       jsonEncoder: jsonEncoder.JSON_V2
     })
   }),
