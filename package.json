@@ -8,7 +8,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && cp nginx.conf ./dist && cp mime.types ./dist",
-    "start": "vue-cli-service build && cp nginx.conf ./dist && cp mime.types ./dist",
+    "start": "node server.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
