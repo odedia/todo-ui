@@ -1,11 +1,11 @@
 resources:
-- name: todos-ui-docker-image
+- name: todo-ui-docker-image
   type: docker-image
   source:
-    username: ((docker-hub-username))
-    password: ((docker-hub-password))
-    repository: harbor.apps.cf.tanzutime.com/demo/todo-ui:latest
-    email: ((docker-hub-email))
+    username: ((harbor-username))
+    password: ((harbor-password))
+    repository: harbor.apps.cf.tanzutime.com/demo/todo-ui
+    email: ((harbor-email))
 
 - name: source-code
   type: git
@@ -29,9 +29,9 @@ jobs:
   serial: true
   plan:
   - get: source-code
-  - get: todos-ui-docker-image
+  - get: todo-ui-docker-image
     trigger: true
   - put: cf-push-resource
     params:
-      manifest: source-code/todo-ui/manifest.yml
+      manifest: source-code/todo-ui/manifest-docker.yml
 

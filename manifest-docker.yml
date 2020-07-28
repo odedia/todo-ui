@@ -1,0 +1,11 @@
+---
+applications:
+  #build.sh before cf push
+  - name: todo-ui
+    docker:
+      image: harbor.apps.cf.tanzutime.com/demo/todo-ui:latest
+    memory: 256M
+    routes:
+    - route: todo.apps.tas.tanzuworld.com
+    env:
+      ZIPKIN_ADDRESS: aacea43e4dbdd448390f9334070f58b3-661522435.eu-west-1.elb.amazonaws.com
