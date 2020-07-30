@@ -19,13 +19,15 @@
     "vue-resource": "^1.5.1",
     "vuejs-logger": "1.5.3",
     "zipkin": "^0.11.2",
+    "zipkin-axios": "^0.2.1",
+    "zipkin-instrumentation-axiosjs": "^0.22.0",
     "zipkin-instrumentation-vue-resource": "^0.2.0",
     "zipkin-transport-http": "^0.11.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
-    "@vue/cli-service": "^3.3.0",
+    "@vue/cli-service": "^4.5.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",

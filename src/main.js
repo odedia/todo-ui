@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+import VueResource from 'vue-resource'
 
 Vue.config.productionTip = false
 
@@ -16,6 +17,11 @@ const options = {
 };
 
 Vue.use(VueLogger, options);
+Vue.use(VueResource);
+
+/* Auth plugin */
+// import Zipkin from './zipkin'
+// Vue.use(Zipkin);
 
 /* eslint-disable no-new */
 new Vue({

@@ -22,9 +22,10 @@
     data: () => {
       return {
       }
-    }
+    },
+    console: () => console,
+    window: () => window
   }
-
   export default app
 </script>
 
