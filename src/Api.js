@@ -17,14 +17,20 @@ const recorder = new BatchRecorder({
 const localServiceName = 'todo-ui'; // name of this service
 const remoteServiceName = 'todo-service' // name of the remote service
 
-const tracer = new Tracer({ ctxImpl, recorder, localServiceName });
+const tracer = new Tracer({ ctxImpl: ctxImpl, 
+                            recorder: recorder, 
+                            serviceName: localServiceName});
 
 const instance = axios.create({  
   baseURL: SERVER_URL,
   timeout: 1000
 });  
 
-const zipkinAxios = wrapAxios(instance, { tracer,  remoteServiceName });
+const zipkinAxios = wrapAxios(instance, { 
+                                tracer: tracer,  
+                                serviceName: localServiceName, 
+                                remoteServiceName: remoteServiceName 
+                              });
   
 export default {
   // (C)reate  
