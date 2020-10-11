@@ -5,7 +5,9 @@ import {Tracer, ExplicitContext, BatchRecorder} from 'zipkin';
 
 //The updated code is using PCF route mappings instead of port binding.
 const SERVER_URL = process.env.SERVER_URL || window.location.protocol + '//' + window.location.hostname + '/api'
-const ZIPKIN_URL = process.env.ZIPKIN_URL || "http://localhost:9411/api/v2/spans"
+
+//const ZIPKIN_URL = window.location.protocol + '//' +  window.location.hostname + '/api/v2/spans'
+const ZIPKIN_URL = 'http://35.197.246.193:9411/api/v2/spans'
 
 const ctxImpl = new ExplicitContext();
 const recorder = new BatchRecorder({
