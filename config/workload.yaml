@@ -1,0 +1,14 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: todo-ui
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+  params:
+    - name: run-image
+      value: harbor.apps.cf.tanzutime.com/apps/todo-ui
+  source:
+    git:
+      url: https://github.com/odedia/todo-ui
+      ref:
+        branch: master
