@@ -5,7 +5,7 @@ SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor.apps.cf.tanzutime.com/a
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='./dist')
 
 custom_build('harbor.apps.cf.tanzutime.com/apps/todo-ui',
-    "npm install && npm run build && cp nginx.conf dist/ && cp mime.types dist/ && \
+    "npm install && npm run build  && \
     tanzu apps workload apply -f config/workload.yaml --live-update \
       --local-path " + LOCAL_PATH + " --source-image " + SOURCE_IMAGE + " --yes && \
     .tanzu/wait.sh todo-ui",
