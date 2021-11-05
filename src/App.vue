@@ -5,7 +5,7 @@
       <p>This demo is based on a project written by <a href="http://evanyou.me">Evan You</a></p>
       <p>Original Vue TodoApp project is <a href="https://vuejs.org/v2/examples/todomvc.html">here</a></p>
       <p>First modified for this tutorial by Andrew Hughes</p>
-      <p>PCF modifications for this tutorial were made by Oded Shopen</p>
+      <p>Modifications for Tanzu Application Service and Tanzu Application Platform were made by <a href="https://odedia.org">Oded Shopen</a></p>
     </footer>
   </div>
 </template>
