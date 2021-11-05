@@ -32,7 +32,18 @@
     "node-forge": ">=0.10.0",
     "axios": ">=0.21.2",
     "is-svg": ">=4.2.2",
-    "y18n": ">=4.0.1"
+    "y18n": ">=4.0.1",
+    "ansi-regex": ">=5.0.1",
+    "color-string": ">=1.5.5",
+    "ws": ">=6.2.2",
+    "nth-check": ">=2.0.1",
+    "path-parse": ">=1.0.7",
+    "postcss": ">=7.0.36",
+    "browserslist": ">=4.16.5",
+    "hosted-git-info": ">=2.8.9",
+    "elliptic": ">=6.5.4",
+    "highlight.js": ">=10.4.1",
+    "node-fetch": ">=2.6.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
@@ -52,7 +63,18 @@
     "node-forge": ">=0.10.0",
     "axios": ">=0.21.2",
     "is-svg": ">=4.2.2",
-    "y18n": ">=4.0.1"
+    "y18n": ">=4.0.1",
+    "ansi-regex": ">=5.0.1",
+    "color-string": ">=1.5.5",
+    "ws": ">=6.2.2",
+    "nth-check": ">=2.0.1",
+    "path-parse": ">=1.0.7",
+    "postcss": ">=7.0.36",
+    "browserslist": ">=4.16.5",
+    "hosted-git-info": ">=2.8.9",
+    "elliptic": ">=6.5.4",
+    "highlight.js": ">=10.4.1",
+    "node-fetch": ">=2.6.1"
   },
   "eslintConfig": {
     "root": true,
