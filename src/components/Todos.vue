@@ -15,7 +15,6 @@
                  @keyup.enter="addTodo">
         </header>
         <section class="main" v-show="todos.length" v-cloak>
-          <input class="toggle-all" type="checkbox" v-model="allDone">
           <ul class="todo-list">
             <li v-for="todo in filteredTodos"
                 class="todo"
