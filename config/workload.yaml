@@ -3,10 +3,18 @@ kind: Workload
 metadata:
   name: todo-ui
   labels:
-    apps.tanzu.vmware.com/workload-type: web
-  params:
-    - name: run-image
-      value: harbor.apps.cf.tanzutime.com/apps/todo-ui
+    apps.tanzu.vmware.com/workload-type: spa
+spec:
+  build:
+    env:
+    - name: BP_NODE_RUN_SCRIPTS
+      value: build
+    - name: BP_WEB_SERVER
+      value: httpd
+    - name: BP_WEB_SERVER_ROOT
+      value: dist
+    - name: BP_WEB_SERVER_ENABLE_PUSH_STATE
+      value: "true"
   source:
     git:
       url: https://github.com/odedia/todo-ui
