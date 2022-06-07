@@ -1,29 +1,11 @@
-# client
+## Sample VueJS application for Tanzu Build Service and Tanzu Application Platform
 
-## Project setup
-```
-yarn install
-```
+In order to build this repo, you will either need a TBS version with the Web Server buildpack, or you'll need to install it yourself. Update the reference to your OCI registry and run the `create-cluster-builder.sh` script. 
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+For deployment to TAP, follow the steps here in order to create a ClusterSupplyChain that builds Single-Page applications: https://github.com/tsalm-pivotal/tap-react-sample
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+To build and run this code, run:
 
-### Run your tests
 ```
-yarn run test
+kubectl apply -f config/workload.yaml
 ```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
