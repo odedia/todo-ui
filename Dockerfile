@@ -1,4 +1,4 @@
-FROM node:9.11.1-alpine
+FROM node:16-alpine3.14
 
 # install simple http server for serving static content
 RUN npm install -g http-server
@@ -10,7 +10,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # install project dependencies
-RUN npm install
+RUN npm install --force
 
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
