@@ -4,6 +4,7 @@ metadata:
   name: todo-ui
   labels:
     apps.tanzu.vmware.com/workload-type: spa
+    app.kubernetes.io/part-of: todos-app
 spec:
   build:
     env:
