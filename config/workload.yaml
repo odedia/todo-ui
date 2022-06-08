@@ -8,15 +8,15 @@ spec:
   build:
     env:
     - name: BP_NODE_RUN_SCRIPTS
-      value: build
+      value: "build"
     - name: BP_WEB_SERVER
-      value: httpd
+      value: "httpd"
     - name: BP_WEB_SERVER_ROOT
-      value: dist
+      value: "dist"
     - name: BP_WEB_SERVER_ENABLE_PUSH_STATE
       value: "true"
   source:
     git:
       url: https://github.com/odedia/todo-ui
       ref:
-        branch: master
+        branch: main
