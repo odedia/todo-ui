@@ -5,8 +5,8 @@ metadata:
   description: Todo GUI
   tags:
     - app-accelerator
-    - java
-    - spring
+    - vuejs
+    - node
     - web
     - tanzu
   annotations:
