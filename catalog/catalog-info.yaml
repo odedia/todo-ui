@@ -16,5 +16,5 @@ spec:
   lifecycle: experimental
   owner: default-team
   system: todos
-  consumesApis: # list of APIs provided by the Component
+  consumesApi: # list of APIs provided by the Component
     - todo-api
