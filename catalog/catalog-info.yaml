@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: todo-ui
+  description: Todo GUI
+  tags:
+    - app-accelerator
+    - java
+    - spring
+    - web
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=todos-app'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
+  consumesApis: # list of APIs provided by the Component
+    - todo-api
