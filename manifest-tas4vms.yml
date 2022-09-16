@@ -1,7 +1,0 @@
----
-applications:
-  #build.sh before cf push
-  - name: todo-ui
-    path: ./dist
-    memory: 256M
-    random-route: true
