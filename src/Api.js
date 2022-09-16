@@ -4,48 +4,28 @@ import {HttpLogger} from 'zipkin-transport-http'
 import {Tracer, ExplicitContext, BatchRecorder} from 'zipkin';
 
 //The updated code is using PCF route mappings instead of port binding.
-// const SERVER_URL = process.env.SERVER_URL || window.location.protocol + '//' + window.location.hostname + '/api'
-const SERVER_URL = 'https://todos.test.tanzutime.com/api'
-
-//const ZIPKIN_URL = window.location.protocol + '//' +  window.location.hostname + '/api/v2/spans'
-const ZIPKIN_URL = 'http://35.197.246.193:9411/api/v2/spans'
+const SERVER_URL = process.env.SERVER_URL || window.location.protocol + '//' + window.location.hostname + '/api'
+// const SERVER_URL = 'https://todos.test.tanzutime.com/api'
 
 const ctxImpl = new ExplicitContext();
-const recorder = new BatchRecorder({
-  logger: new HttpLogger({
-    endpoint: ZIPKIN_URL
-  })
-});
-
-const localServiceName = 'todo-ui'; // name of this service
-const remoteServiceName = 'todo-service' // name of the remote service
-
-const tracer = new Tracer({ ctxImpl: ctxImpl, 
-                            recorder: recorder, 
-                            serviceName: localServiceName});
 
 const instance = axios.create({  
-  baseURL: SERVER_URL,
-  timeout: 1000
+  baseURL: 'https://' + window.location.hostname + '/api',
+  timeout: 5000
 });  
-
-const zipkinAxios = wrapAxios(instance, { 
-                                tracer: tracer,  
-                                serviceName: localServiceName, 
-                                remoteServiceName: remoteServiceName 
-                              });
   
-export default {
+export default {  
   // (C)reate  
-  createNew: (text, completed) => zipkinAxios.post('todos', {title: text, completed: completed}),  
+  createNew: (text, completed) => instance.post('todos', {title: text, completed: completed}),  
   // (R)ead  
-  getAll: () => zipkinAxios.get('todos', {  
+  getAll: () => instance.get('todos', {  
     transformResponse: [function (data) {  
       return data ? JSON.parse(data)._embedded.todos : data;  
     }]  
   }),  
   // (U)pdate API
-  updateForId: (id, text, completed) => zipkinAxios.put('todos/'+id, {title: text, completed: completed}),  
+  updateForId: (id, text, completed) => instance.put('todos/'+id, {title: text, completed: completed}),  
   // (D)elete API
-  removeForId: (id) => zipkinAxios.del('todos/'+id)  
+  removeForId: (id) => instance.delete('todos/'+id)  
 }
+

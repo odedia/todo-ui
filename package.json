@@ -39,16 +39,12 @@
     "vue-resource": "^1.5.1",
     "vuejs-logger": "1.5.3",
     "ws": ">=6.2.2",
-    "y18n": ">=4.0.1",
-    "zipkin": "^0.11.2",
-    "zipkin-axios": "^0.2.1",
-    "zipkin-instrumentation-vue-resource": "^0.2.0",
-    "zipkin-transport-http": "^0.11.2"
+    "y18n": ">=4.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
-    "@vue/cli-service": "^4.5.0",
+    "@vue/cli-service": "^4.5.19",
     "ansi-regex": ">=5.0.1",
     "axios": ">=0.21.2",
     "babel-eslint": "^10.0.1",
