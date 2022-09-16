@@ -1,9 +1,4 @@
 import axios from 'axios'  
-import wrapAxios from 'zipkin-axios'
-import {HttpLogger} from 'zipkin-transport-http'
-import {Tracer, ExplicitContext, BatchRecorder} from 'zipkin';
-
-const ctxImpl = new ExplicitContext();
 
 const instance = axios.create({  
   baseURL: 'https://' + window.location.hostname + '/api',

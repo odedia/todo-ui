@@ -1,3 +1,5 @@
-kp clusterstore create spa -b paketobuildpacks/web-servers
-kp clusterbuilder create spa --buildpack paketo-buildpacks/web-servers --tag <registry>/spa:v2 --stack full --store spa
-
+kp clusterbuilder create builder-for-web-servers \
+--tag harbor.apps.cf.tanzutime.com/apps/spa:v1 \
+--order builder-for-web-servers.yaml \
+--stack full \
+--store default
