@@ -3,10 +3,6 @@ import wrapAxios from 'zipkin-axios'
 import {HttpLogger} from 'zipkin-transport-http'
 import {Tracer, ExplicitContext, BatchRecorder} from 'zipkin';
 
-//The updated code is using PCF route mappings instead of port binding.
-const SERVER_URL = process.env.SERVER_URL || window.location.protocol + '//' + window.location.hostname + '/api'
-// const SERVER_URL = 'https://todos.test.tanzutime.com/api'
-
 const ctxImpl = new ExplicitContext();
 
 const instance = axios.create({  
