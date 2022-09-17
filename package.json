@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "NODE_ENV=production node_modules/webpack/bin/webpack.js--progress --hide-modules vue-cli-service build",
+    "build": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules vue-cli-service build",
     "start": "node server.js",
     "lint": "vue-cli-service lint"
   },
