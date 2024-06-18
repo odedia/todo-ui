@@ -1,0 +1,18 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  creationTimestamp: null
+  name: todo-ui
+spec:
+  packageRef:
+    refName: todo-ui.apps.local
+    versionSelection:
+      constraints: 20240618.1152.45313
+  serviceAccountName: carvel-package-installer
+  values:
+  - secretRef:
+      name: todo-ui-values
+status:
+  conditions: null
+  friendlyDescription: ""
+  observedGeneration: 0

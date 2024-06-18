@@ -1,0 +1,55 @@
+apiVersion: apps.tanzu.vmware.com/v1
+kind: ContainerApp
+metadata:
+  annotations:
+    containerapp.apps.tanzu.vmware.com/class: kubernetes
+  name: todo-ui
+spec:
+  content:
+    buildTimestamp: "2024-06-18T11:52:45Z"
+    gitCommit: 26ee345ed6e7a0c762c97df9772b4500d872c1a3-dirty
+    gitURL: github.com/odedia/todo-ui.git
+    packageRefName: todo-ui.apps.local
+    summary: git:26ee345 @ 2024-06-18T11:52:45Z
+    version: 20240618.1152.45313
+  image: harbor.tanzutime.com/apps/todo-ui@sha256:0a971c6486d9e4fe37adcbf383db3038417d9c8932e1139d88dd8090bab6103f
+  ports:
+  - name: main
+    port: 8080
+  relatedRefs:
+  - for: kubernetes.list-replicas
+    kind: Pod
+    labelSelector: containerapp.apps.tanzu.vmware.com/app-name=todo-ui
+  - apiGroup: apps
+    for: kubernetes.service-binding-target
+    kind: Deployment
+    name: todo-ui
+  - for: kubernetes.service-target
+    kind: Service
+    name: todo-ui
+  - for: kubernetes.scale-replicas
+    keyPath: .data['values.yml']->[yaml].replicas
+    kind: Secret
+    name: todo-ui-values
+  - for: kubernetes.scale-resources
+    keyPath: .data['values.yml']->[yaml].resources
+    kind: Secret
+    name: todo-ui-values
+  - for: kubernetes.set-secret-env
+    keyPath: .data['values.yml']->[yaml].secretEnv
+    kind: Secret
+    name: todo-ui-values
+  - apiGroup: packaging.carvel.dev
+    for: kubernetes.delete
+    kind: PackageInstall
+    name: todo-ui
+  - apiGroup: data.packaging.carvel.dev
+    for: kubernetes.delete
+    kind: Package
+    name: todo-ui.apps.local.20240618.1152.45313
+  - for: kubernetes.delete
+    kind: Secret
+    name: todo-ui-values
+  resources:
+    cpu: 300m
+    memory: 1Gi

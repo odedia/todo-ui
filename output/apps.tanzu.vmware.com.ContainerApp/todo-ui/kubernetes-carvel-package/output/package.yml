@@ -1,0 +1,28 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: todo-ui.apps.local.20240618.1152.45313
+spec:
+  refName: todo-ui.apps.local
+  releasedAt: "2024-06-18T11:53:21Z"
+  template:
+    spec:
+      deploy:
+      - kapp:
+          rawOptions:
+          - --wait=false
+      fetch:
+      - imgpkgBundle:
+          image: harbor.tanzutime.com/apps/todo-ui@sha256:88b5c9ff30d3b3adcaa9a6d9601b42efa5a83d81276c2ebdbef58dcd642717ae
+      template:
+      - ytt:
+          paths:
+          - config/
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+  valuesSchema:
+    openAPIv3: null
+  version: 20240618.1152.45313
